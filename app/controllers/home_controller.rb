@@ -1,4 +1,4 @@
-# ola eu sou o ze
+# ola eu sou o joao
 class HomeController < ApplicationController
   def index
 
