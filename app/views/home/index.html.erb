@@ -1,2 +1,9 @@
-<h1>Ola</h1>
-<%= current_user.email %>
+<h1>The Grad List</h1>
+
+<% if user_signed_in? %>
+  <%= current_user.email %>
+
+  <% current_user.items.each do |item| %>
+    <p><%= item.length %></p>
+  <% end %>
+<% end %>
