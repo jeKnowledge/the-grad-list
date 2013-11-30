@@ -1,0 +1,11 @@
+<h1>Add New Item</h1>
+
+<% if user_signed_in? %>
+  <p><%= current_user.email %></p>
+
+  <%= form_tag('new_item_added', method: 'post') do %>
+    <%= label_tag(:item_content, 'What do you plan to do?') %>
+    <%= text_field_tag(:item_content) %>
+    <%= submit_tag('Submit') %>
+  <% end %>
+<% end %>

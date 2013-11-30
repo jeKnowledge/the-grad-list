@@ -1,9 +1,11 @@
 <h1>The Grad List</h1>
 
 <% if user_signed_in? %>
-  <%= current_user.email %>
+  <p><%= current_user.email %></p>
 
   <% current_user.items.each do |item| %>
-    <p><%= item.length %></p>
+    <p>i <%= item.content %></p>
   <% end %>
+
+  <p><a href='new_item'>New Item</a></p>
 <% end %>
