@@ -7,5 +7,7 @@
     <p>i <%= item.content %></p>
   <% end %>
 
-  <p><a href='new_item'>New Item</a></p>
+  <p><a href="new_item">New Item</a></p>
+<% else %>
+  <p><a href="/users/sign_up">Sign Up</a> | <a href="/users/sign_in">Sign In</a></p>
 <% end %>
