@@ -4,7 +4,7 @@ Setting it up
 -------------
 You should follow these instructions in order to get it up and running.
 
-Start by getting Ruby 2 and Rails 4 and then run:
+Start by running:
 
     git clone git@github.com:jeKnowledge/the-grad-list.git
     cd the-grad-list/
@@ -12,4 +12,4 @@ Start by getting Ruby 2 and Rails 4 and then run:
     rake db:migrate
     rails server
 
-Finally you can try it out on `localhost:3000` to test the app.
+Finally you can head to `localhost:3000` to test the app.
