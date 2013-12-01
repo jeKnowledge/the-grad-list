@@ -3,9 +3,11 @@
 <% if user_signed_in? %>
   <p><%= current_user.email %></p>
 
-  <% current_user.items.each do |item| %>
-    <p><%= item.content %></p>
-  <% end %>
+  <ul>
+    <% current_user.items.each do |item| %>
+      <li><%= item.content %>, added on <%= item.show_date %></li>
+    <% end %>
+  </ul>
 
   <p><a href="new_item">New Item</a></p>
 
