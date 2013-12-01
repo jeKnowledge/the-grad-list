@@ -4,10 +4,12 @@
   <p><%= current_user.email %></p>
 
   <% current_user.items.each do |item| %>
-    <p>i <%= item.content %></p>
+    <p><%= item.content %></p>
   <% end %>
 
   <p><a href="new_item">New Item</a></p>
+
+  <p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></p>
 <% else %>
   <p><a href="/users/sign_up">Sign Up</a> | <a href="/users/sign_in">Sign In</a></p>
 <% end %>
