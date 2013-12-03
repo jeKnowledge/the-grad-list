@@ -4,7 +4,9 @@ TheGradList2::Application.routes.draw do
 
   get 'new_item' => 'new_item#index'
   post 'new_item_added' => 'new_item#added'
-  
+
+  resources :user_view, only: [:show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
