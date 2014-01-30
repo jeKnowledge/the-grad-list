@@ -9,13 +9,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-
-    if @item.save then
-      flash[:success] = "Ola"
-    else
-      flash[:errors] = @item.errors.first
-    end
-
     current_user.items.push(@item)
     redirect_to(root_path)
   end
