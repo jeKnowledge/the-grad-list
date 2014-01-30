@@ -1,0 +1,10 @@
+<h1>New Item</h1>
+
+<% if user_signed_in? %>
+    <p><%= current_user.email %></p>
+
+    <%= form_for @item do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit "Create" %>
+    <% end %>
+<% end %>
