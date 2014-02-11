@@ -1,8 +1,13 @@
 TheGradList2::Application.routes.draw do
+  get "items/destroy"
   devise_for :users
   root :to => 'home#index'
 
-  resources :items
+  resources :items, only: [:new, :create, :destroy] do
+    collection do
+      post 'done'
+    end
+  end
   resources :user, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
