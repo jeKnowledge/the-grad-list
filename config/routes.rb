@@ -4,7 +4,7 @@ TheGradList2::Application.routes.draw do
 
   resources :items, only: [:new, :create, :destroy] do
     collection do
-      post 'done'
+      put 'done'
     end
   end
   resources :user, only: [:show]
