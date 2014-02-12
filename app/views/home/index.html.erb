@@ -10,7 +10,7 @@ ToDo
   <li>
     <%= item.content %>, added on
     <%= item.show_date %>.
-    <%= link_to "Remove", items_destroy_path(:id => item.id) %>
+    <%= link_to "Remove", item_path(:id => item.id), method: :delete %>
     <%= link_to "Done", done_items_path(:id => item.id), :method => :post  %>
   </li>
   <% end %>

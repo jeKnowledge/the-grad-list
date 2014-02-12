@@ -1,5 +1,4 @@
 TheGradList2::Application.routes.draw do
-  get "items/destroy"
   devise_for :users
   root :to => 'home#index'
 
