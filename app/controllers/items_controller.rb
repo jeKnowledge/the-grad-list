@@ -25,10 +25,10 @@ class ItemsController < ApplicationController
 
   def done
     i = current_user.items.find(params[:id])
-
+    
     if i.done == 0
       i.update_attribute(:done, 1)
-    else
+    else 
       i.update_attribute(:done, 0)
     end
 
