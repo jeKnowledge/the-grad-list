@@ -1,8 +1,8 @@
-<h1>User <%= @user.id %>'s posts</h1>
+<h1>User <%= @user.id %>'s items</h1>
 
 <ul>
   <% @user.items.each do |item| %>
-    <li><%= item.content %>, added on <%= item.show_date %></li>
+    <li><%= item.content %>, added on <%= item.show_date %>.</li>
   <% end %>
   
   <p><a href="follow">Follow</a></p>
