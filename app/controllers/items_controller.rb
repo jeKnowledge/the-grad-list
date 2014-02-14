@@ -9,14 +9,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    @item.done = 0;
+    @item.done = 0
     current_user.items.push(@item)
-    redirect_to(root_path)
+    redirect_to(items_path)
   end
 
   def destroy
     current_user.items.find(params[:id]).destroy
-    redirect_to(root_path)
+    redirect_to :back
   end
 
   def show
@@ -25,14 +25,14 @@ class ItemsController < ApplicationController
 
   def done
     i = current_user.items.find(params[:id])
-    
+
     if i.done == 0
       i.update_attribute(:done, 1)
-    else 
+    else
       i.update_attribute(:done, 0)
     end
 
-    redirect_to(root_path)
+    redirect_to :back
   end
 
   private

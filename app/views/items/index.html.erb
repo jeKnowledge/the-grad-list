@@ -1,1 +1,31 @@
 <h1>Items</h1>
+
+<h2>ToDo</h2>
+<ul>
+  <%current_user.items.each do |item| %>
+    <%if item.done == 0 %>
+      <li>
+        <%= item.content %>, added on
+        <%= item.show_date %>.
+        <%= link_to "Remove", item_path(:id => item.id), method: :delete %>
+        <%= link_to "Done", done_items_path(:id => item.id), method: :put %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h2>Done</h2>
+<ul>
+  <%current_user.items.each do |item| %>
+    <%if item.done == 1 %>
+      <li>
+        <%= item.content %>, added on
+        <%= item.show_date %>.
+        <%= link_to "Remove", item_path(:id => item.id), method: :delete %>
+        <%= link_to "UnDone", done_items_path(:id => item.id), method: :put %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<p><a href="items/new">New Item</a></p>
