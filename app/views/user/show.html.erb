@@ -1,9 +1,27 @@
-<h1>User <%= @user.id %>'s items</h1>
+<h1><%= @user.email %>'s items</h1>
 
+<h2>ToDo</h2>
 <ul>
-  <% @user.items.each do |item| %>
-    <li><%= item.content %>, added on <%= item.show_date %>.</li>
+  <%current_user.items.each do |item| %>
+    <%if item.done == 0 %>
+      <li>
+        <%= item.content %>, added on
+        <%= item.show_date %>.
+      </li>
+    <% end %>
   <% end %>
-  
-  <p><a href="follow">Follow</a></p>
 </ul>
+
+<h2>Done</h2>
+<ul>
+  <%current_user.items.each do |item| %>
+    <%if item.done == 1 %>
+      <li>
+        <%= item.content %>, added on
+        <%= item.show_date %>.
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<p><a href="follow">Follow</a></p>
