@@ -8,6 +8,11 @@ TheGradList2::Application.routes.draw do
     end
   end
 
-  resources :user, only: [:show]
+  resources :user, only: [:show] do
+    collection do
+      put 'follow'
+    end
+  end
+  
   resources :items
 end

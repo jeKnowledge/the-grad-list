@@ -4,6 +4,6 @@ class UserController < ApplicationController
   end
 
   def follow
-
+    redirect_to(:back)
   end
 end
