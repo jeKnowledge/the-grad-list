@@ -3,7 +3,7 @@
 <h1><%= @user.email %>'s items</h1>
 
 <h2>ToDo</h2>
-<% current_user.items.each do |item| %>
+<% @user.items.each do |item| %>
   <% if item.done == 0 %>
     <p>
       <%= item.content %>, added on
@@ -13,7 +13,7 @@
 <% end %>
 
 <h2>Done</h2>
-<% current_user.items.each do |item| %>
+<% @user.items.each do |item| %>
   <% if item.done == 1 %>
     <p>
       <%= item.content %>, added on
@@ -22,4 +22,15 @@
   <% end %>
 <% end %>
 
-<p><%= link_to "Follow", follow_user_index_path(:id => current_user.id), method: :put %></p>
+<p>Following: <%= @user.followed_users.count %></p>
+<p>Followed by: <%= @user.followers.count %></p>
+
+<% unless current_user?(@user) %>
+  <div id="follow_form">
+    <% if current_user.following?(@user) %>
+      <%= render 'unfollow' %>
+    <% else %>
+      <%= render 'follow' %>
+    <% end %>
+  </div>
+<% end %>

@@ -9,10 +9,12 @@ TheGradList2::Application.routes.draw do
   end
 
   resources :user, only: [:show] do
-    collection do
-      put 'follow'
+    member do
+      get :following, :followers
     end
   end
-  
+
   resources :items
+
+  resources :relationships, only: [:create, :destroy]
 end
