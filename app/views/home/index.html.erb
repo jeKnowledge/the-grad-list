@@ -3,6 +3,16 @@
 <% if user_signed_in? %>
   <a href=<%= user_path(current_user.id) %>><p class="information"><%= current_user.email %></p></a>
 
+
+  <% current_user.followed_users.each do |fuser| %>
+    <% fuser.items.each do |item| %>
+      <p>
+        <%= item.content %>, added on
+        <%= item.show_date %>.
+      </p>
+    <% end %>
+  <% end %>
+
   <p><%= link_to "My Items", items_path %></p>
 
   <p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></p>
