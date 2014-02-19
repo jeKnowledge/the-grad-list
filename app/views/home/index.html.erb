@@ -6,7 +6,8 @@
   <% current_user.followed_users.each do |fuser| %>
     <% fuser.items.each do |item| %>
       <p>
-        <%= item.content %>, added on
+        <%= item.content %>, added by
+        <%= fuser.email %> on
         <%= item.show_date %>.
       </p>
     <% end %>
