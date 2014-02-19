@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   def index
     @done_items = Array.new
     @todo_items = Array.new
-    current_user.items.each do |item| 
+
+    current_user.items.each do |item|
       if item.done == 0
         @todo_items.push(item)
       else
@@ -10,6 +11,7 @@ class ItemsController < ApplicationController
       end
     end
   end
+
   def show
 
   end
@@ -51,4 +53,3 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:content)
   end
 end
-
