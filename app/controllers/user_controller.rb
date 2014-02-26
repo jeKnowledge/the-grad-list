@@ -7,7 +7,7 @@ class UserController < ApplicationController
     @done_items = Array.new
     @todo_items = Array.new
 
-    current_user.items.each do |item|
+    @user.items.each do |item|
       if item.done == 0
         @todo_items.push(item)
       else
